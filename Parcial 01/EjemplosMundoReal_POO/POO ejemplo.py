@@ -39,3 +39,9 @@ print(nadador1.entrenar())
 print(nadador1.hidratarse())
 print(futbolista1.entrenar())
 print(futbolista1.hidratarse())
+
+#Explicación:
+#En este ejemplo, hemos definido una clase base Deportista con atributos y métodos comunes.
+#Luego, hemos creado dos clases derivadas, Nadador y Futbolista, que heredan de Deportista.
+#Cada clase derivada tiene su propio constructor y métodos que sobrescriben los métodos de la clase base.
+#Esto demuestra los conceptos de herencia y polimorfismo en la programación orientada a objetos.
