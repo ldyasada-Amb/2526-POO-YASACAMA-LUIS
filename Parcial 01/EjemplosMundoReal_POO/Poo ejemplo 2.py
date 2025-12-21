@@ -16,12 +16,12 @@ class producto: #constructor de la clase producto
         self.nombre = nombre
         self.precio = precio
 
-class cliente:
+class cliente: #constructor de la clase cliente
     def __init__(self, nombre):
         self.nombre = nombre
         self.carrito = []
 
-    def agregar_al_carrito(self, producto):
+    def agregar_al_carrito(self, producto): #agregar producto al carrito
         self.carrito.append(producto)
 
     def mostrar_carrito(self):
@@ -51,4 +51,10 @@ cliente1.agregar_al_carrito(producto2)
 cliente1.mostrar_carrito()
 empleado1 = empleado("Carlos", "Cajero")
 print(empleado1.atender_cliente(cliente1))
+
+# Explicación:
+# En este ejemplo, hemos definido cuatro clases: tienda, producto, cliente y empleado.
+# Cada clase tiene su propio constructor (__init__) y métodos para realizar acciones específicas.
+# La clase tienda puede agregar y mostrar productos, la clase cliente puede agregar productos a su carrito y mostrarlo,
+# y la clase empleado puede atender a un cliente. Este ejemplo ilustra cómo se pueden modelar entidades del mundo real utilizando la programación orientada a objetos.
 
