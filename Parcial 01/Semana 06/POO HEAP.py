@@ -39,5 +39,4 @@ print(lavadora.apagar_dispositivo())
 print(computadora.encender_dispositivo())
 print(computadora.apagar_dispositivo())
 # Este programa define una clase base DispositivoElectrico con métodos para encender y apagar el dispositivo. Luego, se crean dos clases derivadas, LavadoraRopa y computadoraPortatil,
-
-
+# que heredan de DispositivoElectrico y sobrescriben los métodos para proporcionar mensajes específicos para cada tipo de dispositivo.
