@@ -21,7 +21,7 @@ class ArchivoPrincipal:
         self.archivo = open(self.nombre_archivo, 'w')
         print(f"Constructor: Archivo {self.nombre_archivo} ha sido abierto para escritura.")
 
-    def escribir(self, palabras):
+    def escribir(self, palabras): # método para escribir en el archivo
         self.archivo.write(palabras + '\n')
         print(f"Escribiendo en el archivo: {palabras}")
 
@@ -30,7 +30,7 @@ class ArchivoPrincipal:
         print(f"Destructor: Archivo {self.nombre_archivo} ha sido cerrado.")
 
 # Crear una instancia de la clase ArchivoPrincipal
-archivo1 = ArchivoPrincipal("ejemplo.txt") #
+archivo1 = ArchivoPrincipal("ejemplo.txt") # crear y abrir un archivo
 archivo1.escribir("Hola, este es un ejemplo de uso de constructor y destructor en Python.")
 archivo1.escribir("El archivo se cerrará automáticamente cuando el objeto sea destruido.")
 print("Ejemplo de constructor y destructor con manejo de archivos en python finalizado.")
