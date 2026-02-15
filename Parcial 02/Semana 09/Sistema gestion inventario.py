@@ -76,7 +76,7 @@ while True:
     print("6. Mostrar inventario")
     print("7. Salir")
 
-    opcion = input("Ingrese una opción (1-7): ")
+    opcion = input("Ingrese una opción (1-7): ") #  opciones para elegir
     if opcion == "1":
         empresa.añadir_producto(Producto)
     elif opcion == "2":
