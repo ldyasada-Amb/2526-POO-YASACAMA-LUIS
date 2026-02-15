@@ -1,0 +1,2 @@
+Hola, este es un ejemplo de uso de constructor y destructor en Python.
+El archivo se cerrará automáticamente cuando el objeto sea destruido.

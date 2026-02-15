@@ -4,7 +4,7 @@ class calculo_temperatura:
         self.dias = dias
         self.temperaturas = []  # lista donde se almacenan las temperaturas por dia
 
-    def ingreso_temperatura(self):
+    def ingreso_temperatura(self): 
         while True:
             dia = input("Ingrese el día: ")
             temp = int(input("Ingrese la temperatura: "))
