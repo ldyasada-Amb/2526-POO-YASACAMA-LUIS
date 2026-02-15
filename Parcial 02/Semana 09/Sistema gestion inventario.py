@@ -1,17 +1,18 @@
 # Sistema de gestión de inventario para una tienda de artículos electrónicos
-class Producto:
-    def __init__(self, ID, nombre, precio, cantidad,):
+class Producto: # Clase base para representar un producto en el inventario
+    def __init__(self, ID, nombre, precio, cantidad,): # Constructor para inicializar los atributos del producto
         self.ID = ID
         self.nombre = nombre
         self.precio = precio
         self.cantidad = cantidad
         
 
-class Inventario (Producto):
+class Inventario (Producto): # Clase para gestionar el inventario de productos, hereda de la clase Producto
     def __init__(self, ID, nombre, precio, cantidad):
-        self.lista_productos = []
+        self.lista_productos = []# Lista para almacenar los productos en el inventario
+        super().__init__(ID, nombre, precio, cantidad) # Llamada al constructor
 
-    def añadir_producto(self, producto):
+    def añadir_producto(self, producto):# Método para añadir un nuevo producto al inventario
         while True:
             ID = input("Ingrese el ID del producto: ")
             nombre = input("Ingrese el nombre del producto: ")
@@ -23,7 +24,7 @@ class Inventario (Producto):
             if opcion.lower() == "no":
                 break
     
-    def eliminar_producto_por_ID(self, ID):
+    def eliminar_producto_por_ID(self, ID): # Método para eliminar un producto del inventario utilizando su ID
         for producto in self.lista_productos:
             if producto["ID"] == ID:
                 self.lista_productos.remove(producto)
@@ -31,7 +32,7 @@ class Inventario (Producto):
                 return
         print(f"No se encontró un producto con ID {ID}.")
     
-    def actualizar_cantidad_por_ID(self, ID, nueva_cantidad):
+    def actualizar_cantidad_por_ID(self, ID, nueva_cantidad): # Método para actualizar la cantidad de un producto utilizando su ID
         for producto in self.lista_productos:
             if producto["ID"] == ID:
                 producto["cantidad"] = nueva_cantidad
@@ -39,7 +40,7 @@ class Inventario (Producto):
                 return
         print(f"No se encontró un producto con ID {ID}.")
     
-    def actualizar_precio_por_ID(self, ID, nuevo_precio):
+    def actualizar_precio_por_ID(self, ID, nuevo_precio): # Método para actualizar el precio de un producto utilizando su ID
         for producto in self.lista_productos:
             if producto["ID"] == ID:
                 producto["precio"] = nuevo_precio
@@ -47,14 +48,14 @@ class Inventario (Producto):
                 return
         print(f"No se encontró un producto con ID {ID}.")
 
-    def buscar_producto_por_nombre(self, nombre):
+    def buscar_producto_por_nombre(self, nombre): # Método para buscar un producto en el inventario utilizando su nombre
         for producto in self.lista_productos:
             if producto["nombre"].lower() == nombre.lower():
                 print(f"Producto encontrado: ID: {producto['ID']}, Nombre: {producto['nombre']}, Precio: {producto['precio']}, Cantidad: {producto['cantidad']}")
                 return
         print(f"No se encontró un producto con el nombre {nombre}.")
 
-    def mostrar_inventario(self):
+    def mostrar_inventario(self): # Método para mostrar todos los productos en el inventario
         if not self.lista_productos:
             print("El inventario está vacío.")
         else:
