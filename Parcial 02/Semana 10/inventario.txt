@@ -1,0 +1,3 @@
+Inventario de productos:
+ID: 1, Nombre: q, Precio: 1.0, Cantidad: 2
+ID: 1, Nombre: w, Precio: 2.0, Cantidad: 4
