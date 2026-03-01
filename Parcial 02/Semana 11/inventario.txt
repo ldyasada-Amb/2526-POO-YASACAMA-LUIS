@@ -1,0 +1,2 @@
+Inventario de productos:
+ID: 1, Nombre: deja, Precio: 1.0, Cantidad: 3
