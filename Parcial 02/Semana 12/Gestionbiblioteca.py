@@ -1,4 +1,4 @@
-class Libro:
+class Libro: # agreda los libros
     def __init__(self, titulo, autor, categoria, isbn):
         self.info = (titulo, autor)  # tupla inmutable
         self.categoria = categoria
@@ -8,7 +8,7 @@ class Libro:
         return f"{self.info[0]} por {self.info[1]} (ISBN: {self.isbn}, Categoría: {self.categoria})"
 
 
-class Usuario:
+class Usuario: # agreda las credenciales del usuario
     def __init__(self, nombre, user_id):
         self.nombre = nombre
         self.user_id = user_id
@@ -18,37 +18,37 @@ class Usuario:
         return f"Usuario: {self.nombre} (ID: {self.user_id})"
 
 
-class Biblioteca:
+class Biblioteca: # agrega las funciones de la biblioteca
     def __init__(self):
         self.libros = {}  # diccionario ISBN -> Libro
         self.usuarios = {}  # diccionario ID -> Usuario
         self.ids_unicos = set()  # conjunto para IDs únicos
 
-    def agregar_libro(self, libro):
+    def agregar_libro(self, libro): #
         self.libros[libro.isbn] = libro
 
-    def quitar_libro(self, isbn):
+    def quitar_libro(self, isbn): # quitar libros por ISBN
         if isbn in self.libros:
             del self.libros[isbn]
 
-    def registrar_usuario(self, usuario):
+    def registrar_usuario(self, usuario): # registrar usuarios por ID único
         if usuario.user_id not in self.ids_unicos:
             self.usuarios[usuario.user_id] = usuario
             self.ids_unicos.add(usuario.user_id)
 
-    def dar_baja_usuario(self, user_id):
+    def dar_baja_usuario(self, user_id): # dar de baja usuarios por ID único
         if user_id in self.usuarios:
             del self.usuarios[user_id]
             self.ids_unicos.remove(user_id)
 
-    def prestar_libro(self, user_id, isbn):
+    def prestar_libro(self, user_id, isbn): # prestar libros a usuarios por ID único y ISBN
         if user_id in self.usuarios and isbn in self.libros:
             usuario = self.usuarios[user_id]
             libro = self.libros[isbn]
             usuario.libros_prestados.append(libro)
             del self.libros[isbn]
 
-    def devolver_libro(self, user_id, isbn):
+    def devolver_libro(self, user_id, isbn): # devolver libros por ID único y ISBN
         if user_id in self.usuarios:
             usuario = self.usuarios[user_id]
             for libro in usuario.libros_prestados:
@@ -57,7 +57,7 @@ class Biblioteca:
                     self.libros[isbn] = libro
                     break
 
-    def buscar_libros(self, criterio, valor):
+    def buscar_libros(self, criterio, valor): # buscar libros por título, autor o categoría
         resultados = []
         for libro in self.libros.values():
             if criterio == "titulo" and libro.info[0] == valor:
@@ -68,14 +68,14 @@ class Biblioteca:
                 resultados.append(libro)
         return resultados
 
-    def listar_libros_prestados(self, user_id):
+    def listar_libros_prestados(self, user_id): # listar libros prestados a un usuario por ID único
         if user_id in self.usuarios:
             return self.usuarios[user_id].libros_prestados
         return []
 
 
 # Menú interactivo
-def menu():
+def menu(): #       menú para interactuar con la biblioteca
     biblioteca = Biblioteca()
     while True:
         print("\n--- Menú Biblioteca ---")
